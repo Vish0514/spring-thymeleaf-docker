@@ -22,6 +22,7 @@ public class UserThymeleafController {
     // Show list of users
     @GetMapping
     public String getAll(Model model) {
+        log.info("Fetching all users");
         List<UserDto> users = userService.getAll();
         model.addAttribute("users", users);
         return "user-list"; // Return user-list.html view
