@@ -50,13 +50,13 @@ public class UserThymeleafController {
         } else {
             userService.save(userDto);
         }
-        return "redirect:/v1/users"; // Redirect to user list
+        return "redirect:/thyme/users"; // Redirect to user list
     }
 
     // Delete user
     @PostMapping("/delete/{id}")
     public String deleteById(@PathVariable Long id) {
         userService.deleteById(id);
-        return "redirect:/v1/users"; // Redirect to user list after delete
+        return "redirect:/thyme/users"; // Redirect to user list after delete
     }
 }
