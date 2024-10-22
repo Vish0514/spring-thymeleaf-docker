@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+@RequestMapping("/users")
 public class UserThymeleafController {
 
     private final UserService userService;
