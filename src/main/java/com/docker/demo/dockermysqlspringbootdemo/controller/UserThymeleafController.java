@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @Log4j2
-@RequestMapping("/thyme/users")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserThymeleafController {
 
@@ -50,13 +50,13 @@ public class UserThymeleafController {
         } else {
             userService.save(userDto);
         }
-        return "redirect:/thyme/users"; // Redirect to user list
+        return "redirect:/users"; // Redirect to user list
     }
 
     // Delete user
     @PostMapping("/delete/{id}")
     public String deleteById(@PathVariable Long id) {
         userService.deleteById(id);
-        return "redirect:/thyme/users"; // Redirect to user list after delete
+        return "redirect:/users"; // Redirect to user list after delete
     }
 }
