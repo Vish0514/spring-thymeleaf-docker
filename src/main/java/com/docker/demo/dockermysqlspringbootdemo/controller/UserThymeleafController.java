@@ -12,9 +12,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@Log4j2
-@RequestMapping("/users")
-@RequiredArgsConstructor
 public class UserThymeleafController {
 
     private final UserService userService;
@@ -22,7 +19,6 @@ public class UserThymeleafController {
     // Show list of users
     @GetMapping
     public String getAll(Model model) {
-        log.info("Fetching all users");
         List<UserDto> users = userService.getAll();
         model.addAttribute("users", users);
         return "user-list"; // Return user-list.html view
