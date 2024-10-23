@@ -4,6 +4,7 @@ import com.docker.demo.dockermysqlspringbootdemo.dto.UserDto;
 import com.docker.demo.dockermysqlspringbootdemo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserRestController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @PostMapping
     public ResponseEntity<UserDto> save(@Valid @RequestBody UserDto userDto) {
