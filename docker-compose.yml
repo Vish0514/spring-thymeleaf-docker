@@ -16,7 +16,7 @@ services:
     restart: on-failure
 
   mysqlDb:
-    image: mysql:8.0.22
+    image: mysql
     container_name: docker-mysql-springboot-demo-db
     ports:
       - "3307:3306"
