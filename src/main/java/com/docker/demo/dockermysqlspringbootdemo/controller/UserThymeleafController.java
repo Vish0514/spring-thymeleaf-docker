@@ -17,12 +17,11 @@ public class UserThymeleafController {
 
     private final UserService userService;
 
-    // Show list of users
     @GetMapping
     public String getAll(Model model) {
         List<UserDto> users = userService.getAll();
         model.addAttribute("users", users);
-        return "user-list"; // Return user-list.html view
+        return "user-list";  
     }
 
     // Show form to add a new user
