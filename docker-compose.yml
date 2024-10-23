@@ -1,8 +1,9 @@
 version: "3"
 services:
   springBootApp:
-    image: uday07/docker-mysql-springboot-demo:latest
-    container_name: docker-mysql-springboot-demo-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - DOCKER_MYSQL_SPRINGBOOT_DEMO_MYSQL_HOST=docker-mysql-springboot-demo-db
     ports:
