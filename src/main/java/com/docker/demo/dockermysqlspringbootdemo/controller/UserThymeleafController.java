@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserThymeleafController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public String getAll(Model model) {
