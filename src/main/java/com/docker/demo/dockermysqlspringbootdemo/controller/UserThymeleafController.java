@@ -2,8 +2,6 @@ package com.docker.demo.dockermysqlspringbootdemo.controller;
 
 import com.docker.demo.dockermysqlspringbootdemo.dto.UserDto;
 import com.docker.demo.dockermysqlspringbootdemo.service.UserService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
