@@ -14,9 +14,10 @@ services:
     depends_on:
       - mysqlDb
     restart: on-failure
+    command: ["./wait-for-it.sh", "mysqlDb:3306", "--", "java", "-jar", "your-app.jar"]
 
   mysqlDb:
-    image: mysql
+    image: mysql:8.0.22
     container_name: docker-mysql-springboot-demo-db
     ports:
       - "3307:3306"
@@ -25,8 +26,12 @@ services:
     volumes:
       - volume:/var/lib/mysql
     environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: docker_mysql_springboot_demo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: docker_mysql_springboot_demo
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
 
 networks:
   app-network:
