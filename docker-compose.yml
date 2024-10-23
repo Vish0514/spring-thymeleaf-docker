@@ -25,6 +25,7 @@ services:
       - volume:/var/lib/mysql
     environment:
         MYSQL_ROOT_PASSWORD: root
+        DOCKER_MYSQL_SPRINGBOOT_DEMO_MYSQL_PORT: 3307
 
 networks:
   network:
